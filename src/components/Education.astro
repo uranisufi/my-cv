@@ -1,0 +1,45 @@
+---
+import { cv } from '../content/cv';
+import FadeIn from './FadeIn.astro';
+---
+
+<section id="background" class="section-block" aria-labelledby="background-heading">
+  <div class="container">
+    <FadeIn>
+      <p class="section-label">Background</p>
+      <h2 id="background-heading" class="section-title">Education & credentials</h2>
+      <div class="education__grid">
+        <div>
+          {
+            cv.education.map((item) => (
+              <article>
+                <h3 class="education__degree">{item.degree}</h3>
+                <p class="education__school">
+                  {item.school} · {item.location}
+                </p>
+                {item.detail && <p class="education__detail">{item.detail}</p>}
+              </article>
+            ))
+          }
+        </div>
+        <div>
+          <h3 class="certifications__title">Certifications</h3>
+          <ul class="certifications__list">
+            {
+              cv.certifications.map((cert) => (
+                <li class="certifications__item">
+                  <span class="certifications__name">{cert.name}</span>
+                  {' — '}
+                  <span class="certifications__issuer">{cert.issuer}</span>
+                  {cert.year && ` · ${cert.year}`}
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+    </FadeIn>
+  </div>
+</section>
+
+<hr class="section-divider" />

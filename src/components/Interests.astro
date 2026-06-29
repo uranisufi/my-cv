@@ -1,0 +1,22 @@
+---
+import { cv } from '../content/cv';
+import FadeIn from './FadeIn.astro';
+---
+
+<section class="section-block" aria-labelledby="interests-heading">
+  <div class="container">
+    <FadeIn>
+      <p class="section-label">Interests</p>
+      <h2 id="interests-heading" class="section-title">What I think about</h2>
+      <p class="interests__intro">
+        Based remotely, working across time zones. I believe reliable software comes from
+        testing early, automating what repeats, and treating quality as a team responsibility.
+      </p>
+      <div class="interests__tags">
+        {cv.interests.map((interest) => <span class="tag">{interest}</span>)}
+      </div>
+    </FadeIn>
+  </div>
+</section>
+
+<hr class="section-divider" />

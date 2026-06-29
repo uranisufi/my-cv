@@ -1,0 +1,39 @@
+---
+import { cv } from '../content/cv';
+import FadeIn from './FadeIn.astro';
+---
+
+<section class="hero" aria-labelledby="hero-heading">
+  <div class="container">
+    <FadeIn>
+      <p class="hero__eyebrow">{cv.person.title} · {cv.person.location}</p>
+      <div class="hero__grid">
+        <div class="hero__content">
+          <h1 id="hero-heading" class="hero__headline">{cv.hero.headline}</h1>
+          <p class="hero__subheadline">{cv.hero.subheadline}</p>
+          <p class="hero__intro">{cv.hero.intro}</p>
+          <div class="hero__actions">
+            <a class="btn btn-primary" href="#cases">See my work</a>
+            <a
+              class="btn btn-secondary"
+              href={cv.person.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn
+            </a>
+          </div>
+        </div>
+        <div class="hero__photo-wrap">
+          <img
+            class="hero__photo"
+            src={`${import.meta.env.BASE_URL}${cv.person.photo}`}
+            alt={`Portrait of ${cv.person.name}`}
+            width="280"
+            height="350"
+          />
+        </div>
+      </div>
+    </FadeIn>
+  </div>
+</section>

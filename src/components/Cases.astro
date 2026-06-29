@@ -1,0 +1,29 @@
+---
+import { cv } from '../content/cv';
+import FadeIn from './FadeIn.astro';
+import CaseStudy from './CaseStudy.astro';
+---
+
+<section id="cases" class="section-block" aria-labelledby="cases-heading">
+  <div class="container">
+    <FadeIn>
+      <p class="section-label">Selected cases</p>
+      <h2 id="cases-heading" class="section-title">Work I'm proud of</h2>
+      <div class="cases__list">
+        {
+          cv.cases.map((caseItem) => (
+            <CaseStudy
+              title={caseItem.title}
+              org={caseItem.org}
+              problem={caseItem.problem}
+              action={caseItem.action}
+              metrics={caseItem.metrics}
+            />
+          ))
+        }
+      </div>
+    </FadeIn>
+  </div>
+</section>
+
+<hr class="section-divider" />

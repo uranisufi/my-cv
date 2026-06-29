@@ -1,0 +1,28 @@
+---
+import { cv } from '../content/cv';
+import FadeIn from './FadeIn.astro';
+---
+
+<section id="work" class="section-block" aria-labelledby="work-heading">
+  <div class="container">
+    <FadeIn>
+      <p class="section-label">Now</p>
+      <h2 id="work-heading" class="section-title">What I'm working on</h2>
+      <article class="current-role">
+        <header class="current-role__header">
+          <div class="current-role__meta">
+            <h3 class="current-role__title">{cv.currentRole.title}</h3>
+            <span class="current-role__company">{cv.currentRole.company} · Remote</span>
+            <time class="current-role__dates" datetime="">{cv.currentRole.dates}</time>
+          </div>
+        </header>
+        <p class="current-role__description">{cv.currentRole.description}</p>
+        <div class="current-role__tags">
+          {cv.currentRole.tags.map((tag) => <span class="tag">{tag}</span>)}
+        </div>
+      </article>
+    </FadeIn>
+  </div>
+</section>
+
+<hr class="section-divider" />

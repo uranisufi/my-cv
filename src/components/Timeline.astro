@@ -1,0 +1,29 @@
+---
+import { cv } from '../content/cv';
+import FadeIn from './FadeIn.astro';
+---
+
+<section class="section-block" aria-labelledby="experience-heading">
+  <div class="container">
+    <FadeIn>
+      <p class="section-label">Previously</p>
+      <h2 id="experience-heading" class="section-title">Earlier work</h2>
+      <div class="timeline__list">
+        {
+          cv.experience.map((item) => (
+            <article class="timeline__item">
+              <header class="timeline__header">
+                <h3 class="timeline__company">{item.company}</h3>
+                <span class="timeline__role">{item.role}</span>
+                <time class="timeline__dates">{item.dates}</time>
+              </header>
+              <p class="timeline__summary">{item.summary}</p>
+            </article>
+          ))
+        }
+      </div>
+    </FadeIn>
+  </div>
+</section>
+
+<hr class="section-divider" />

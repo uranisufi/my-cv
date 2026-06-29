@@ -1,0 +1,38 @@
+---
+interface Props {
+  title: string;
+  org: string;
+  problem: string;
+  action: string;
+  metrics: { value: string; label: string }[];
+}
+
+const { title, org, problem, action, metrics } = Astro.props;
+---
+
+<article class="case-card">
+  <header class="case-card__header">
+    <h3 class="case-card__title">{title}</h3>
+    <p class="case-card__org">{org}</p>
+  </header>
+  <div class="case-card__body">
+    <div>
+      <h4 class="case-card__block-title">The problem</h4>
+      <p class="case-card__text">{problem}</p>
+    </div>
+    <div>
+      <h4 class="case-card__block-title">What I did</h4>
+      <p class="case-card__text">{action}</p>
+    </div>
+  </div>
+  <div class="case-card__metrics">
+    {
+      metrics.map((metric) => (
+        <div>
+          <div class="case-card__metric-value">{metric.value}</div>
+          <div class="case-card__metric-label">{metric.label}</div>
+        </div>
+      ))
+    }
+  </div>
+</article>

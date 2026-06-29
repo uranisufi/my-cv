@@ -1,0 +1,60 @@
+.current-role__header {
+  margin-bottom: var(--space-6);
+}
+
+.current-role__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-2) var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+.current-role__title {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 500;
+  margin: 0;
+}
+
+.current-role__company {
+  font-size: var(--text-lg);
+  color: var(--color-text-muted);
+}
+
+.current-role__dates {
+  font-size: var(--text-sm);
+  color: var(--color-text-subtle);
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .current-role__dates {
+    width: auto;
+    margin-left: auto;
+  }
+
+  .current-role__meta {
+    flex-wrap: nowrap;
+  }
+}
+
+.current-role__description {
+  font-size: var(--text-lg);
+  color: var(--color-text-muted);
+  line-height: var(--leading-relaxed);
+  margin: 0 0 var(--space-8);
+  max-width: 48rem;
+}
+
+.current-role__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.section-divider {
+  border: none;
+  border-top: 1px solid var(--color-border);
+  margin: 0;
+}
