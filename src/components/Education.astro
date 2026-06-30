@@ -22,21 +22,25 @@ import FadeIn from './FadeIn.astro';
             ))
           }
         </div>
-        <div>
-          <h3 class="certifications__title">Certifications</h3>
-          <ul class="certifications__list">
-            {
-              cv.certifications.map((cert) => (
-                <li class="certifications__item">
-                  <span class="certifications__name">{cert.name}</span>
-                  {' — '}
-                  <span class="certifications__issuer">{cert.issuer}</span>
-                  {cert.year && ` · ${cert.year}`}
-                </li>
-              ))
-            }
-          </ul>
-        </div>
+        {
+          cv.certifications.length > 0 && (
+            <div>
+              <h3 class="certifications__title">Certifications</h3>
+              <ul class="certifications__list">
+                {
+                  cv.certifications.map((cert) => (
+                    <li class="certifications__item">
+                      <span class="certifications__name">{cert.name}</span>
+                      {' — '}
+                      <span class="certifications__issuer">{cert.issuer}</span>
+                      {cert.year && ` · ${cert.year}`}
+                    </li>
+                  ))
+                }
+              </ul>
+            </div>
+          )
+        }
       </div>
     </FadeIn>
   </div>

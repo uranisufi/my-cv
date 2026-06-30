@@ -10,7 +10,6 @@ export interface CVData {
     photo: string;
   };
   hero: { headline: string; subheadline: string; intro: string };
-  stats: { value: string; label: string }[];
   currentRole: {
     title: string;
     company: string;
@@ -45,141 +44,150 @@ export interface CVData {
 
 export const cv: CVData = {
   meta: {
-    title: 'Uran Isufi — SDET / QA Engineer',
+    title: 'Uran Isufi — Senior SDET / QA Engineer',
     description:
-      'SDET and QA Engineer focused on test automation, CI/CD quality gates, and building reliable release pipelines for distributed teams.',
+      'Senior SDET Consultant helping organizations ship software faster and confidently through test automation, CI/CD, and AI-driven quality engineering.',
     url: 'https://uranisufi.github.io/my-cv/',
   },
   person: {
     name: 'Uran Isufi',
-    nickname: 'Ura',
-    title: 'SDET · QA Engineer',
-    location: 'Remote',
-    email: 'uranisufi@gmail.com',
+    title: 'Senior SDET Consultant · QA Engineer',
+    location: 'Prishtina, Kosovo',
+    email: 'uranisufi25@gmail.com',
     linkedin: 'https://www.linkedin.com/in/uranisufi/',
-    photo: 'images/headshot.svg',
+    photo: 'images/headshot.jpg',
   },
   hero: {
     headline: "Hi, I'm Uran.",
-    subheadline: 'I build quality into products before they reach users.',
+    subheadline: 'Making Quality an Accelerator, Not a Bottleneck.',
     intro:
-      'SDET with a focus on test automation, API testing, and CI/CD quality gates. I work best with teams where quality is shared ownership and shipping means shipping with confidence.',
+      'My mission is to help organizations ship software faster and confidently while continuously improving quality through AI-driven processes. I work as a trusted QA advisor — from automation and CI/CD to test strategy and AI QA initiatives.',
   },
-  stats: [
-    { value: '5+', label: 'Years in QA & test automation' },
-    { value: '500+', label: 'Automated tests across web & API' },
-    { value: '40%', label: 'Reduction in regression cycle time' },
-    { value: '3', label: 'Product teams supported remotely' },
-  ],
   currentRole: {
-    title: 'SDET / QA Engineer',
-    company: '[TBD: Company Name]',
-    dates: '[TBD: Start] – Present',
+    title: 'Senior SDET Consultant',
+    company: 'Ritech International AG',
+    dates: '2024 – Present',
     description:
-      '[TBD: Describe your current role — what products you test, how you approach automation, CI integration, and collaboration with engineering. Example: Own end-to-end quality for a B2B platform, leading Playwright automation and release sign-off across staging and production pipelines.]',
+      'Lead end-to-end QA engagement strategy for client projects — assessing quality maturity, delivery risks, and testing needs across multiple teams and domains. Act as a trusted QA advisor, translating business goals into pragmatic quality approaches. Initiate AI QA initiatives internally and monitor their exposure to clients. Perform capability and gap assessments, define scope and priorities, and help clients scale automation, CI, and manual testing capabilities. Organize AI QA workshops and initiatives.',
     tags: [
+      'Test Strategy',
+      'AI QA Engineering',
       'Playwright',
       'Cypress',
-      'API Testing',
       'CI/CD',
-      'Postman',
-      'Test Strategy',
-      'Regression Automation',
-      'Quality Gates',
+      'MCP & Agents',
+      'Quality Engineering Leadership',
+      'Client Advisory',
     ],
   },
   cases: [
     {
-      title: 'End-to-End Automation Framework',
-      org: '[TBD: Company] · 2024',
-      year: '2024',
+      title: 'Establishing a QA processes for web and mobile team',
+      org: 'SVEA Solar · Stockholm, Sweden · 2021',
+      year: '2021',
       problem:
-        'Manual regression was blocking releases. Critical user flows were retested by hand every sprint, slowing delivery and leaving gaps in API coverage.',
+        'Two teams shipping web and mobile apps lacked consistent QA processes. Testing practices varied across squads, slowing releases and reducing confidence in production deployments.',
       action:
-        'Designed and implemented a Playwright-based E2E framework with parallel CI execution, Page Object patterns, and API contract checks. Integrated quality gates into the pipeline so failing tests block merges.',
+        'Established Quality Assurance processes across both teams overseeing web and mobile development. Designed and implemented Cypress end-to-end testing integrated into sveasolar.com, improving coverage and accuracy across critical user flows.',
       metrics: [
-        { value: '60%', label: 'Less manual regression effort' },
-        { value: '15 min', label: 'Full suite runtime in CI' },
+        { value: '2', label: 'Teams with unified QA process' },
+        { value: 'E2E', label: 'Cypress suite in CI' },
       ],
     },
     {
-      title: 'CI/CD Quality Pipeline',
-      org: '[TBD: Company] · 2023',
-      year: '2023',
+      title: 'First QA Engineer into a Startup processing gigabytes of data daily',
+      org: 'Prime Retail & Trade Solutions · Pristina · 2019–2021',
+      year: '2020',
       problem:
-        'Defects were reaching staging late. There was no consistent smoke suite or clear release criteria between dev, QA, and ops.',
+        'As the first Test Engineer on the team, there was no QA process aligned with the pace of development. Releases relied on ad-hoc manual testing with no automation or documented criteria.',
       action:
-        'Built a tiered test strategy — smoke on every PR, full regression nightly, and environment-specific health checks. Partnered with DevOps to wire results into GitHub Actions and Slack alerts.',
+        'Built the QA function from scratch — designed a testing framework using Selenium, Java, and BDD. Established testing criteria, documentation, test data, environments, defect escalation procedures, and release testing cycles.',
       metrics: [
-        { value: '30%', label: 'Fewer staging defects' },
-        { value: '2x', label: 'Faster release sign-off' },
+        { value: '1st', label: 'QA engineer on the team' },
+        { value: 'BDD', label: 'Selenium + Java framework' },
       ],
     },
     {
-      title: 'API Test Platform',
-      org: '[TBD: Company] · 2022',
-      year: '2022',
+      title: 'Selenium & SpecFlow Framework for Jamatu',
+      org: 'Intes GmbH · Pristina · 2017–2018',
+      year: '2017',
       problem:
-        'Microservices lacked consistent API test coverage. Postman collections were scattered and never ran in CI, so breaking changes slipped through.',
+        'Jamatu.com needed repeatable regression coverage but had no internal automation capability. Test design and execution were manual and inconsistent across releases.',
       action:
-        'Consolidated API tests into a shared Postman/Newman suite with environment configs and schema validation. Documented ownership so each team could extend coverage without duplicating setup.',
+        'Developed an internal testing framework using Selenium, C#, and SpecFlow to cover test scenarios for jamatu.com. Owned test design, development, and documentation for short- and long-term projects.',
       metrics: [
-        { value: '200+', label: 'API scenarios automated' },
-        { value: '95%', label: 'Critical endpoints covered' },
+        { value: 'C#', label: 'SpecFlow + Selenium stack' },
+        { value: 'E2E', label: 'Automated regression suite' },
       ],
     },
   ],
   experience: [
     {
-      company: '[TBD: Previous Company]',
-      role: 'QA Engineer',
-      dates: '2022 – 2023',
+      company: 'Povio',
+      role: 'Senior QA Engineer · AI-Driven Quality Engineering',
+      dates: '2021 – 2024',
       summary:
-        'Owned manual and automated testing for a web product. Introduced smoke automation and defect triage workflows.',
+        'Drove quality engineering with a focus on AI-driven testing approaches. Led automation strategy, CI integration, and quality practices across product teams in a fast-paced consulting environment.',
     },
     {
-      company: '[TBD: Earlier Company]',
-      role: 'Junior QA / Test Analyst',
-      dates: '2020 – 2022',
+      company: 'SVEA Solar',
+      role: 'QA Consultant',
+      dates: '2021 – 2022',
       summary:
-        'Executed test plans, logged defects, and supported UAT. First exposure to Selenium and agile delivery.',
+        'Consulted remotely for a Stockholm-based solar energy company. Established QA processes for web and mobile teams and implemented Cypress E2E testing for sveasolar.com.',
+    },
+    {
+      company: 'Prime Retail & Trade Solutions',
+      role: 'QA Engineer',
+      dates: '2019 – 2021',
+      summary:
+        'First Test Engineer on the team. Built QA from the ground up with a Selenium, Java, and BDD framework — including test criteria, environments, defect escalation, and release cycles.',
+    },
+    {
+      company: 'Polymath Services',
+      role: 'QA Automation Engineer',
+      dates: '2018 – 2019',
+      summary:
+        'QA Engineer on several US-based projects — QA scan analysis, test criteria, E2E testing, agile QA flow integration, and release support. Tested the New York Blood Center app through to production.',
+    },
+    {
+      company: 'Intes GmbH',
+      role: 'QA Engineer',
+      dates: '2017 – 2018',
+      summary:
+        'Test design, development, and documentation for client projects. Built a Selenium, C#, and SpecFlow framework covering test scenarios for jamatu.com.',
     },
   ],
   education: [
     {
-      degree: '[TBD: Degree, e.g. BSc. Computer Science]',
-      school: '[TBD: University]',
-      location: '[TBD: Country]',
-      detail: '[TBD: Thesis, GPA, or honors if relevant]',
+      degree: 'Bachelor of English & Literature',
+      school: 'University of Prishtina',
+      location: 'Prishtina, Kosovo',
+      detail: '2011 – 2016',
     },
   ],
-  certifications: [
-    {
-      name: '[TBD: e.g. ISTQB Foundation Level]',
-      issuer: '[TBD: Issuer]',
-      year: '2024',
-    },
-    {
-      name: '[TBD: Certification]',
-      issuer: '[TBD: Issuer]',
-      year: '2023',
-    },
-  ],
+  certifications: [],
   interests: [
     'Test Automation',
+    'AI QA Engineering',
+    'Playwright',
+    'Cypress',
+    'Selenium',
     'CI/CD',
     'API Testing',
-    'Playwright',
-    'Quality Strategy',
-    'DevOps for QA',
-    'Performance Testing',
-    'AI-Assisted Testing',
-    'Remote Work',
-    'B2B SaaS',
+    'Mobile Testing',
+    'Test Strategy',
+    'MCP & Agents',
+    'Quality Engineering Leadership',
+    'Biking',
+    'Skiing',
+    'Mountain Exploring',
+    'Tennis',
+    'Cooking',
   ],
   contact: {
     headline: "Let's talk.",
-    body: 'Working on a product where quality, automation, or release confidence matters? I would like to hear about it.',
-    openTo: 'Also open to remote SDET / QA Engineer roles',
+    body: 'Working on a product where quality, automation, or AI-driven testing matters? I would like to hear about it.',
+    openTo: 'Open to Senior SDET / QA Consultant engagements and remote roles',
   },
 };
