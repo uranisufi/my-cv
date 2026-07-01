@@ -4,10 +4,12 @@ interface Props {
   org: string;
   problem: string;
   action: string;
-  metrics: { value: string; label: string }[];
+  metrics?: { value: string; label: string }[];
+  outcomes?: { heading: string; items: string[] };
 }
 
-const { title, org, problem, action, metrics } = Astro.props;
+const { title, org, problem, action, metrics, outcomes } = Astro.props;
+const panelId = `outcomes-${title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
 ---
 
 <article class="case-card">
@@ -25,14 +27,49 @@ const { title, org, problem, action, metrics } = Astro.props;
       <p class="case-card__text">{action}</p>
     </div>
   </div>
-  <div class="case-card__metrics">
-    {
-      metrics.map((metric) => (
-        <div>
-          <div class="case-card__metric-value">{metric.value}</div>
-          <div class="case-card__metric-label">{metric.label}</div>
+  {
+    outcomes && (
+      <div class="case-card__outcomes">
+        <div class="case-card__outcomes-header">
+          <h4 class="case-card__block-title">{outcomes.heading}</h4>
+          <button
+            type="button"
+            class="collapsible-toggle"
+            data-collapsible-toggle
+            aria-expanded="false"
+            aria-controls={panelId}
+          >
+            <span data-toggle-label>See more</span>
+          </button>
         </div>
-      ))
-    }
-  </div>
+        <div id={panelId} class="collapsible-panel case-card__outcomes-panel" hidden>
+          <div class="collapsible-panel-inner">
+            <ul class="case-card__outcomes-list">
+              {
+                outcomes.items.map((item, index) => (
+                  <li class="collapsible-item" style={`--item-index: ${index}`}>
+                    {item}
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+        </div>
+      </div>
+    )
+  }
+  {
+    metrics && metrics.length > 0 && (
+      <div class="case-card__metrics">
+        {
+          metrics.map((metric) => (
+            <div>
+              <div class="case-card__metric-value">{metric.value}</div>
+              <div class="case-card__metric-label">{metric.label}</div>
+            </div>
+          ))
+        }
+      </div>
+    )
+  }
 </article>

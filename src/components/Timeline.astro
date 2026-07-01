@@ -1,26 +1,45 @@
 ---
 import { cv } from '../content/cv';
 import FadeIn from './FadeIn.astro';
+
+const panelId = 'experience-panel';
 ---
 
 <section class="section-block" aria-labelledby="experience-heading">
   <div class="container">
     <FadeIn>
-      <p class="section-label">Previously</p>
-      <h2 id="experience-heading" class="section-title">Earlier work</h2>
-      <div class="timeline__list">
-        {
-          cv.experience.map((item) => (
-            <article class="timeline__item">
-              <header class="timeline__header">
-                <h3 class="timeline__company">{item.company}</h3>
-                <span class="timeline__role">{item.role}</span>
-                <time class="timeline__dates">{item.dates}</time>
-              </header>
-              <p class="timeline__summary">{item.summary}</p>
-            </article>
-          ))
-        }
+      <div class="timeline__header-row">
+        <div>
+          <p class="section-label">Previously</p>
+          <h2 id="experience-heading" class="section-title timeline__title">Earlier work</h2>
+        </div>
+        <button
+          type="button"
+          class="collapsible-toggle timeline__toggle"
+          data-collapsible-toggle
+          aria-expanded="false"
+          aria-controls={panelId}
+        >
+          <span data-toggle-label>See more</span>
+        </button>
+      </div>
+      <div id={panelId} class="collapsible-panel timeline__panel" hidden>
+        <div class="collapsible-panel-inner">
+          <div class="timeline__list">
+            {
+              cv.experience.map((item, index) => (
+                <article class="timeline__item collapsible-item" style={`--item-index: ${index}`}>
+                  <header class="timeline__header">
+                    <h3 class="timeline__company">{item.company}</h3>
+                    <span class="timeline__role">{item.role}</span>
+                    <time class="timeline__dates">{item.dates}</time>
+                  </header>
+                  <p class="timeline__summary">{item.summary}</p>
+                </article>
+              ))
+            }
+          </div>
+        </div>
       </div>
     </FadeIn>
   </div>

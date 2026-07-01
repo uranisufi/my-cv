@@ -23,7 +23,8 @@ export interface CVData {
     year: string;
     problem: string;
     action: string;
-    metrics: { value: string; label: string }[];
+    metrics?: { value: string; label: string }[];
+    outcomes?: { heading: string; items: string[] };
   }[];
   experience: {
     company: string;
@@ -58,7 +59,7 @@ export const cv: CVData = {
     photo: 'images/headshot.jpg',
   },
   hero: {
-    headline: "Hi, I'm Uran.",
+    headline: "Hey, I'm Uran.",
     subheadline: 'Making Quality an Accelerator, Not a Bottleneck.',
     intro:
       'My mission is to help organizations ship software faster and confidently while continuously improving quality through AI-driven processes. I work as a trusted QA advisor — from automation and CI/CD to test strategy and AI QA initiatives.',
@@ -86,26 +87,37 @@ export const cv: CVData = {
       org: 'SVEA Solar · Stockholm, Sweden · 2021',
       year: '2021',
       problem:
-        'Two teams shipping web and mobile apps lacked consistent QA processes. Testing practices varied across squads, slowing releases and reducing confidence in production deployments.',
+        'Two teams shipping web and mobile apps lacked consistent QA processes. Svea Solar was looking to scale into 6 European countries and needed a unified QA process to ensure quality across all platforms.',
       action:
         'Established Quality Assurance processes across both teams overseeing web and mobile development. Designed and implemented Cypress end-to-end testing integrated into sveasolar.com, improving coverage and accuracy across critical user flows.',
-      metrics: [
-        { value: '2', label: 'Teams with unified QA process' },
-        { value: 'E2E', label: 'Cypress suite in CI' },
-      ],
+      outcomes: {
+        heading: 'Achieved 🎯',
+        items: [
+          'Cypress automation suite in CI',
+          '95% test coverage on web',
+          'Documented release plans for web and mobile',
+          'SVEA Solar released in all of the countries planned',
+        ],
+      },
     },
     {
-      title: 'First QA Engineer into a Startup processing gigabytes of data daily',
+      title: 'First Test Engineer into a Startup processing tons of data daily',
       org: 'Prime Retail & Trade Solutions · Pristina · 2019–2021',
       year: '2020',
       problem:
         'As the first Test Engineer on the team, there was no QA process aligned with the pace of development. Releases relied on ad-hoc manual testing with no automation or documented criteria.',
       action:
-        'Built the QA function from scratch — designed a testing framework using Selenium, Java, and BDD. Established testing criteria, documentation, test data, environments, defect escalation procedures, and release testing cycles.',
-      metrics: [
-        { value: '1st', label: 'QA engineer on the team' },
-        { value: 'BDD', label: 'Selenium + Java framework' },
-      ],
+        'Built the QA processes from scratch — designed a testing framework using Selenium, Java, and BDD. Established testing criteria, documentation, test data, environments, defect escalation procedures, and release testing cycles. Helpeed on the company goals for ISO certification.',
+      outcomes: {
+        heading: 'Achieved 🎯',
+        items: [
+          'First QA engineer on the team — built QA from zero',
+          'Selenium + Java BDD testing framework in production',
+          'Test criteria, environments, and release cycles documented',
+          'Defect escalation procedures established across the team',
+          'Contributed to company ISO certification goals',
+        ],
+      },
     },
     {
       title: 'Selenium & SpecFlow Framework for Jamatu',
@@ -115,10 +127,15 @@ export const cv: CVData = {
         'Jamatu.com needed repeatable regression coverage but had no internal automation capability. Test design and execution were manual and inconsistent across releases.',
       action:
         'Developed an internal testing framework using Selenium, C#, and SpecFlow to cover test scenarios for jamatu.com. Owned test design, development, and documentation for short- and long-term projects.',
-      metrics: [
-        { value: 'C#', label: 'SpecFlow + Selenium stack' },
-        { value: 'E2E', label: 'Automated regression suite' },
-      ],
+      outcomes: {
+        heading: 'Achieved 🎯',
+        items: [
+          'SpecFlow + Selenium + C# automation stack delivered',
+          'End-to-end automated regression suite for jamatu.com',
+          'Test design and documentation for short- and long-term projects',
+          'Repeatable regression coverage replacing manual runs',
+        ],
+      },
     },
   ],
   experience: [
