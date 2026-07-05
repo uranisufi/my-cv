@@ -55,7 +55,7 @@ export const cv: CVData = {
     title: 'Senior SDET Consultant · QA Engineer',
     location: 'Prishtina, Kosovo',
     email: 'uranisufi25@gmail.com',
-    linkedin: 'https://www.linkedin.com/in/uranisufi/',
+    linkedin: 'https://www.linkedin.com/in/uran-isufi',
     photo: 'images/headshot.jpg',
   },
   hero: {
