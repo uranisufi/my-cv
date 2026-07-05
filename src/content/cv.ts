@@ -119,24 +119,6 @@ export const cv: CVData = {
         ],
       },
     },
-    {
-      title: 'Selenium & SpecFlow Framework for Jamatu',
-      org: 'Intes GmbH · Pristina · 2017–2018',
-      year: '2017',
-      problem:
-        'Jamatu.com needed repeatable regression coverage but had no internal automation capability. Test design and execution were manual and inconsistent across releases.',
-      action:
-        'Developed an internal testing framework using Selenium, C#, and SpecFlow to cover test scenarios for jamatu.com. Owned test design, development, and documentation for short- and long-term projects.',
-      outcomes: {
-        heading: 'Achieved 🎯',
-        items: [
-          'SpecFlow + Selenium + C# automation stack delivered',
-          'End-to-end automated regression suite for jamatu.com',
-          'Test design and documentation for short- and long-term projects',
-          'Repeatable regression coverage replacing manual runs',
-        ],
-      },
-    },
   ],
   experience: [
     {
