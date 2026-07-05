@@ -52,23 +52,25 @@ src/
 
 ## Deployment
 
-Pushes to `main` trigger the GitHub Actions workflow in `.github/workflows/deploy.yml`.
+Pushes to `main` build the site and push it to the `gh-pages` branch via GitHub Actions.
 
-**First-time setup (required — fixes deploy 404 errors):**
+**First-time setup (required):**
 
 1. Open [github.com/uranisufi/my-cv/settings/pages](https://github.com/uranisufi/my-cv/settings/pages)
-2. Under **Build and deployment**, set **Source** to **GitHub Actions** (not “Deploy from a branch”)
-3. Go to **Actions** → re-run the failed **Deploy to GitHub Pages** workflow
+2. Under **Build and deployment**, set **Source** to **Deploy from a branch**
+3. Set **Branch** to `gh-pages` and folder to **`/ (root)`**
+4. Click **Save**
+5. Push to `main` (or re-run the **Deploy to GitHub Pages** workflow under **Actions**)
 
-The site will be live at [https://uranisufi.github.io/my-cv/](https://uranisufi.github.io/my-cv/) after a successful run.
+The site will be live at [https://uranisufi.github.io/my-cv/](https://uranisufi.github.io/my-cv/) after the workflow completes.
 
 ### Troubleshooting
 
 | Error | Fix |
 |-------|-----|
-| `Failed to create deployment (status: 404)` | Pages is not enabled for GitHub Actions — complete step 2 above |
-| Build succeeds, deploy fails | Re-run the workflow after enabling Pages |
-| Node.js 20 deprecation warning | Harmless — the workflow uses Node 22 |
+| `Failed to create deployment (status: 404)` | You were using the old workflow — pull latest `main`. Use **Deploy from a branch** → `gh-pages`, not **GitHub Actions** |
+| Site shows 404 after deploy | Confirm Pages source is `gh-pages` / `(root)` and wait 1–2 minutes |
+| Assets load incorrectly | Astro `base: '/my-cv/'` in `astro.config.mjs` must match the repo name |
 
 ## Custom domain (future)
 
