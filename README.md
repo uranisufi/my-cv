@@ -62,24 +62,31 @@ Pushes to `main` build the site and push it to the `gh-pages` branch via GitHub 
 4. Click **Save**
 5. Push to `main` (or re-run the **Deploy to GitHub Pages** workflow under **Actions**)
 
-The site will be live at [https://uranisufi.github.io/my-cv/](https://uranisufi.github.io/my-cv/) after the workflow completes.
+The site is live at [https://uranisufi.space](https://uranisufi.space) (custom domain) after DNS and Pages are configured.
+
+### Custom domain (uranisufi.space)
+
+**Namecheap DNS** (Advanced DNS tab):
+
+| Type | Host | Value |
+|------|------|--------|
+| A | `@` | `185.199.108.153` |
+| A | `@` | `185.199.109.153` |
+| A | `@` | `185.199.110.153` |
+| A | `@` | `185.199.111.153` |
+| CNAME | `www` | `uranisufi.github.io` |
+
+Remove any conflicting parking-page or URL redirect records.
+
+**GitHub:** [Settings → Pages](https://github.com/uranisufi/my-cv/settings/pages) → Custom domain → `uranisufi.space` → wait for DNS check → enable **Enforce HTTPS**.
 
 ### Troubleshooting
 
 | Error | Fix |
 |-------|-----|
-| `Failed to create deployment (status: 404)` | You were using the old workflow — pull latest `main`. Use **Deploy from a branch** → `gh-pages`, not **GitHub Actions** |
-| Site shows 404 after deploy | Confirm Pages source is `gh-pages` / `(root)` and wait 1–2 minutes |
-| Assets load incorrectly | Astro `base: '/my-cv/'` in `astro.config.mjs` must match the repo name |
-
-## Custom domain (future)
-
-When you own `uranisufi.me`:
-
-1. Add a `public/CNAME` file containing `uranisufi.me`
-2. In `astro.config.mjs`, change `site` to `https://uranisufi.me` and remove or set `base: '/'`
-3. Configure DNS with your registrar (A/CNAME records pointing to GitHub Pages)
-4. Enable the custom domain in repo **Settings → Pages**
+| `Failed to create deployment (status: 404)` | Pages source must be **Deploy from a branch** → `gh-pages` / `(root)` |
+| Site shows 404 after deploy | Confirm DNS records and wait up to 24h for propagation |
+| Assets load incorrectly | `base: '/'` in `astro.config.mjs` when using a root custom domain |
 
 ## Conventions
 

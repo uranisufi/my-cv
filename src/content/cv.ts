@@ -48,7 +48,7 @@ export const cv: CVData = {
     title: 'Uran Isufi — Senior SDET / QA Engineer',
     description:
       'Senior SDET Consultant helping organizations ship software faster and confidently through test automation, CI/CD, and AI-driven quality engineering.',
-    url: 'https://uranisufi.github.io/my-cv/',
+    url: 'https://uranisufi.space/',
   },
   person: {
     name: 'Uran Isufi',

@@ -4,7 +4,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://uranisufi.github.io',
-  base: '/my-cv/',
+  site: 'https://uranisufi.space',
+  base: '/',
   integrations: [sitemap()],
 });
