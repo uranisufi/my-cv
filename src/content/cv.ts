@@ -83,6 +83,25 @@ export const cv: CVData = {
   },
   cases: [
     {
+      title: 'Embedded QA advisory across client engagements',
+      org: 'Ritech International AG · Prishtina · 2024 – Present',
+      year: '2024',
+      problem:
+        'Ritech’s clients operate at different quality maturity levels — some lack automation, others need extra capacity mid-release. There was no consistent way to assess gaps, unblock delivery, or grow QA capability across engagements without reinventing the approach each time.',
+      action:
+        'Act as an embedded QA advisor across multiple client projects — assessing quality maturity, prioritizing workload, and jumping in where teams need hands-on support. Design and implement test frameworks, run critical test cycles, and help clients move from manual-heavy processes toward sustainable automation. Support Ritech’s QA hiring pipeline through candidate evaluation and recruitment, and run workshops on modern QA practices and AI-driven testing.',
+      outcomes: {
+        heading: 'Achieved 🎯',
+        items: [
+          'QA gap assessments and roadmaps delivered for multiple client engagements',
+          'Test frameworks established and test execution unblocked on active deliveries',
+          'Hands-on support across web, API, and automation — from strategy to running tests',
+          'QA engineer recruitment supported — hiring criteria, interviews, and evaluation',
+          'AI QA and test automation workshops organized for clients and internal teams',
+        ],
+      },
+    },
+    {
       title: 'Establishing a QA processes for web and mobile team',
       org: 'SVEA Solar · Stockholm, Sweden · 2021',
       year: '2021',
