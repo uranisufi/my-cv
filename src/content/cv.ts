@@ -59,7 +59,7 @@ export const cv: CVData = {
     photo: 'images/headshot.jpg',
   },
   hero: {
-    headline: "Hey, I'm Uran.",
+    headline: "Hi, I'm Uran. 👋",
     subheadline: 'Making Quality an Accelerator, Not a Bottleneck.',
     intro:
       'My mission is to help organizations ship software faster and confidently while continuously improving quality through AI-driven processes. I work as a trusted QA advisor — from automation and CI/CD to test strategy and AI QA initiatives.',
